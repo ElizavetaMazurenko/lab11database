@@ -1,0 +1,1212 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (63.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (27.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePalindroms (20190108033149)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "palindroms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "num" integer, "palind" varchar, "sq" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190108033149_create_palindroms.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190108033149"]]
+  ↳ bin/rails:9
+  [1m[35m (45.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-08 03:36:25.780434"], ["updated_at", "2019-01-08 03:36:25.780434"]]
+  ↳ bin/rails:9
+  [1m[35m (20.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/liza/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["num", 50], ["palind", "0 1 2 3 11 22"], ["sq", "0 1 4 9 121 484"], ["created_at", "2019-01-08 03:52:07.510420"], ["updated_at", "2019-01-08 03:52:07.510420"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (37.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+Started GET "/" for 127.0.0.1 at 2019-01-08 17:13:43 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/liza/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/liza/.rvm/gems/ruby-2.5.1/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/liza/.rvm/gems/ruby-2.5.1/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 29ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 17:14:44 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 570ms (Views: 568.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 17:15:05 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lab11db/output?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:15:08 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/lab11db/output"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/lab11db/output?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:15:34 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/lab11db/output"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/lab11db/output?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:15:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/lab11db/output"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-01-08 17:15:40 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 43ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 17:16:01 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:16:03 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.6ms)
+
+
+  
+NameError (uninitialized constant PalinController::Palind):
+  
+app/controllers/palin_controller.rb:11:in `outputdb'
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:16:34 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:11
+  [1m[36mPalindrom Create (0.9ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["num", 444], ["palind", "[0,1,2,3,11,22,101,111,121,202,212]"], ["sq", "[0,1,4,9,121,484,10201,12321,14641,40804,44944]"], ["created_at", "2019-01-08 14:16:34.745234"], ["updated_at", "2019-01-08 14:16:34.745234"]]
+  ↳ app/controllers/palin_controller.rb:11
+  [1m[35m (48.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:14
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 50.2ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Integer into String):
+    15: <%end end%>
+    16: </tbody>
+    17: 
+    18: <tr><td colspan="2"  style = "font-weight: bold; color: white;">  <%= "Всего: " + @result.size %> </td></tr>
+    19: 
+    20: </table>
+    21: <br>
+  
+app/views/palin/outputdb.html.erb:18:in `+'
+app/views/palin/outputdb.html.erb:18:in `_app_views_palin_outputdb_html_erb__244572419916638112_70127465908320'
+Started PUT "/__web_console/repl_sessions/5e179237af7699020e79141d2b4b130f" for 127.0.0.1 at 2019-01-08 17:17:04 +0300
+Started PUT "/__web_console/repl_sessions/5e179237af7699020e79141d2b4b130f" for 127.0.0.1 at 2019-01-08 17:17:07 +0300
+Started PUT "/__web_console/repl_sessions/5e179237af7699020e79141d2b4b130f" for 127.0.0.1 at 2019-01-08 17:17:08 +0300
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:17:27 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 17:17:30 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=2323&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:17:33 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"2323", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 2323], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:11
+  [1m[36mPalindrom Create (0.4ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["num", 2323], ["palind", "[0,1,2,3,11,22,101,111,121,202,212,1001,1111,2002]"], ["sq", "[0,1,4,9,121,484,10201,12321,14641,40804,44944,1002001,1234321,4008004]"], ["created_at", "2019-01-08 14:17:33.025820"], ["updated_at", "2019-01-08 14:17:33.025820"]]
+  ↳ app/controllers/palin_controller.rb:11
+  [1m[35m (46.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:14
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 76ms (Views: 19.0ms | ActiveRecord: 47.4ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=2323&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:19:42 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"2323", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 2323], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:22
+Completed 500 Internal Server Error in 26ms (Views: 12.3ms | ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `log' for nil:NilClass):
+  
+app/controllers/palin_controller.rb:23:in `results'
+app/controllers/palin_controller.rb:17:in `outputdb'
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=2323&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:20:12 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"2323", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 2323], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+  [1m[36mPalindrom Load (0.4ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:22
+Completed 500 Internal Server Error in 6ms (Views: 1.9ms | ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `log' for nil:NilClass):
+  
+app/controllers/palin_controller.rb:23:in `results'
+app/controllers/palin_controller.rb:17:in `outputdb'
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 17:20:27 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:20:31 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.1ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 20.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=100&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:21:12 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"100", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.1ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 100], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:11
+  [1m[36mPalindrom Create (0.4ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["num", 100], ["palind", "[0,1,2,3,11,22]"], ["sq", "[0,1,4,9,121,484]"], ["created_at", "2019-01-08 14:21:12.266637"], ["updated_at", "2019-01-08 14:21:12.266637"]]
+  ↳ app/controllers/palin_controller.rb:11
+  [1m[35m (24.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:14
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 58ms (Views: 25.8ms | ActiveRecord: 25.7ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=100&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:22:22 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"100", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 100], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=50&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:23:04 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"50", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+JSON::ParserError (765: unexpected token at '1 2 3 11 22'):
+  
+app/controllers/palin_controller.rb:7:in `outputdb'
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=50&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:23:27 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"50", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+JSON::ParserError (765: unexpected token at '1 2 3 11 22'):
+  
+app/controllers/palin_controller.rb:7:in `outputdb'
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=50&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:23:30 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"50", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+JSON::ParserError (765: unexpected token at '1 2 3 11 22'):
+  
+app/controllers/palin_controller.rb:7:in `outputdb'
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 17:23:32 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=50&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:23:33 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"50", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+JSON::ParserError (765: unexpected token at '1 2 3 11 22'):
+  
+app/controllers/palin_controller.rb:7:in `outputdb'
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 17:23:52 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=50&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:23:56 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"50", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+JSON::ParserError (765: unexpected token at '1 2 3 11 22'):
+  
+app/controllers/palin_controller.rb:7:in `outputdb'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/liza/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 17:24:58 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/liza/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 237ms (Views: 226.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=50&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:25:00 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"50", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.6ms)
+
+
+  
+JSON::ParserError (765: unexpected token at '1 2 3 11 22'):
+  
+app/controllers/palin_controller.rb:7:in `outputdb'
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 17:28:19 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=323&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:28:26 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"323", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:7
+  [1m[36mPalindrom Destroy (1.6ms)[0m  [1m[31mDELETE FROM "palindroms" WHERE "palindroms"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  [1m[35m (22.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:7
+  [1m[36mPalindrom Load (0.1ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 323], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:14
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["num", 323], ["palind", "[0,1,2,3,11,22,101,111,121,202,212]"], ["sq", "[0,1,4,9,121,484,10201,12321,14641,40804,44944]"], ["created_at", "2019-01-08 14:28:26.057113"], ["updated_at", "2019-01-08 14:28:26.057113"]]
+  ↳ app/controllers/palin_controller.rb:14
+  [1m[35m (26.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:17
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 92ms (Views: 17.4ms | ActiveRecord: 53.2ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=323&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:28:52 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"323", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 323], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:9
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 27ms (Views: 16.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=50&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:28:56 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"50", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:14
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["num", 50], ["palind", "[0,1,2,3,11,22]"], ["sq", "[0,1,4,9,121,484]"], ["created_at", "2019-01-08 14:28:56.607504"], ["updated_at", "2019-01-08 14:28:56.607504"]]
+  ↳ app/controllers/palin_controller.rb:14
+  [1m[35m (31.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:17
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 56ms (Views: 16.4ms | ActiveRecord: 32.6ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=50&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:29:07 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"50", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 17.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 17:29:09 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:29:11 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:36:16 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.1ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 38ms (Views: 19.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:36:21 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:36:33 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:36:36 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.4ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:36:59 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.4ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (134.8ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `results' for #<#<Class:0x00007f83b0068ae8>:0x00007f83c5e3eba8>):
+    20: </table>
+    21: <br>
+    22: <p> <b> XML-version-table </b></p>
+    23: <div> <%= results().to_s %> </div>
+    24: <br>
+    25: 
+    26: <%= link_to "Repeat process", :palin_inputdb %>
+  
+app/views/palin/outputdb.html.erb:23:in `_app_views_palin_outputdb_html_erb__2789679240961492799_70101968747220'
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:37:33 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:23
+Completed 200 OK in 18ms (Views: 4.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:37:37 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:23
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:38:40 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.1ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:23
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:38:43 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:23
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=56&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:38:52 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"56", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 56], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:12
+  [1m[36mPalindrom Create (0.4ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["num", 56], ["palind", "[0,1,2,3,11,22]"], ["sq", "[0,1,4,9,121,484]"], ["created_at", "2019-01-08 14:38:52.946575"], ["updated_at", "2019-01-08 14:38:52.946575"]]
+  ↳ app/controllers/palin_controller.rb:12
+  [1m[35m (27.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:15
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:23
+Completed 200 OK in 39ms (Views: 1.8ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=56&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:41:41 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"56", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 56], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:23
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.2ms)
+
+
+  
+TypeError (no implicit conversion of Palindrom::ActiveRecord_Relation into String):
+  
+app/controllers/palin_controller.rb:23:in `results'
+app/controllers/palin_controller.rb:18:in `outputdb'
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=56&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:46:18 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"56", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 56], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 31ms (Views: 18.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=56&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:46:22 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"56", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 56], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 17:46:25 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/liza/Ruby/lab11db/app/views/palin/inputdb.html.erb:28: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/palin/inputdb.html.erb:28: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 17:46:55 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=outputdb+xml+" for 127.0.0.1 at 2019-01-08 17:46:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/palin/results"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/palin/results?utf8=%E2%9C%93&commit=outputdb+xml+" for 127.0.0.1 at 2019-01-08 17:49:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/palin/results"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 17:49:11 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=outputdb+xml+" for 127.0.0.1 at 2019-01-08 17:49:14 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/palin/results"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/palin/results?utf8=%E2%9C%93&commit=outputdb+xml+" for 127.0.0.1 at 2019-01-08 17:50:06 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"outputdb xml "}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:23
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=outputdb+xml+" for 127.0.0.1 at 2019-01-08 17:50:13 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"outputdb xml "}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:23
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:50:15 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.4ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 22.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=678&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:50:20 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"678", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.1ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 678], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:12
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["num", 678], ["palind", "[0,1,2,3,11,22,101,111,121,202,212]"], ["sq", "[0,1,4,9,121,484,10201,12321,14641,40804,44944]"], ["created_at", "2019-01-08 14:50:20.077808"], ["updated_at", "2019-01-08 14:50:20.077808"]]
+  ↳ app/controllers/palin_controller.rb:12
+  [1m[35m (22.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:15
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 67ms (Views: 35.6ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=outputdb+xml+" for 127.0.0.1 at 2019-01-08 17:50:23 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"outputdb xml "}
+  [1m[36mPalindrom Load (0.4ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:23
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 17:51:51 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=+%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+xml-render+" for 127.0.0.1 at 2019-01-08 17:51:53 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>" Получить xml-render "}
+  [1m[36mPalindrom Load (0.4ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:23
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=678&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:51:56 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"678", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 678], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 17:52:00 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=+%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+xml-render+" for 127.0.0.1 at 2019-01-08 17:52:01 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>" Получить xml-render "}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:23
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 17:52:02 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:11:40 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=1&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:11:44 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"1", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 1], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:12
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["num", 1], ["palind", "[0,1]"], ["sq", "[0,1]"], ["created_at", "2019-01-08 15:11:44.414576"], ["updated_at", "2019-01-08 15:11:44.414576"]]
+  ↳ app/controllers/palin_controller.rb:12
+  [1m[35m (35.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:15
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 62ms (Views: 18.5ms | ActiveRecord: 36.3ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=+%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+xml-render+" for 127.0.0.1 at 2019-01-08 18:12:29 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>" Получить xml-render "}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:23
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=1&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:12:35 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"1", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 1], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=+%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+xml-render+" for 127.0.0.1 at 2019-01-08 18:12:37 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>" Получить xml-render "}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:23
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:16:27 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", nil], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:12
+  [1m[36mPalindrom Create (0.4ms)[0m  [1m[32mINSERT INTO "palindroms" ("palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["palind", "[0]"], ["sq", "[0]"], ["created_at", "2019-01-08 15:16:27.850390"], ["updated_at", "2019-01-08 15:16:27.850390"]]
+  ↳ app/controllers/palin_controller.rb:12
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:15
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 42ms (Views: 20.4ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:21:32 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=343&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:21:35 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"343", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 343], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:15
+  [1m[36mPalindrom Create (1.8ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["num", 343], ["palind", "[0,1,2,3,11,22,101,111,121,202,212]"], ["sq", "[0,1,4,9,121,484,10201,12321,14641,40804,44944]"], ["created_at", "2019-01-08 15:21:35.955443"], ["updated_at", "2019-01-08 15:21:35.955443"]]
+  ↳ app/controllers/palin_controller.rb:15
+  [1m[35m (23.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/palin_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/palin_controller.rb:18
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 69ms (Views: 25.5ms | ActiveRecord: 26.6ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:21:40 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"", "commit"=>"Палиндромы с квадратами палиндромами"}
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=fdgfg&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:21:50 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"fdgfg", "commit"=>"Палиндромы с квадратами палиндромами"}
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:24:10 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=fdgfg&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:24:11 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"fdgfg", "commit"=>"Палиндромы с квадратами палиндромами"}
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:24:30 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=fdgfg&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:24:32 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"fdgfg", "commit"=>"Палиндромы с квадратами палиндромами"}
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=+%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+xml-render+" for 127.0.0.1 at 2019-01-08 18:24:36 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>" Получить xml-render "}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:27
+Completed 200 OK in 15ms (Views: 10.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=fdgfg&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:24:38 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"fdgfg", "commit"=>"Палиндромы с квадратами палиндромами"}
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=fdgf&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:24:41 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"fdgf", "commit"=>"Палиндромы с квадратами палиндромами"}
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=+%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+xml-render+" for 127.0.0.1 at 2019-01-08 18:24:43 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>" Получить xml-render "}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:27
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/liza/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:42:42 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/liza/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 250ms (Views: 242.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:42:46 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"", "commit"=>"Палиндромы с квадратами палиндромами"}
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:42:49 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=+%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+xml-render+" for 127.0.0.1 at 2019-01-08 18:42:51 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>" Получить xml-render "}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:27
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=50&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:42:57 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"50", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.4ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:10
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 17.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=+%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+xml-render+" for 127.0.0.1 at 2019-01-08 18:43:01 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>" Получить xml-render "}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:27
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=1&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:43:05 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"1", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 1], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:10
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=+%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+xml-render+" for 127.0.0.1 at 2019-01-08 18:43:06 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>" Получить xml-render "}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:27
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:44:20 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:44:22 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:44:43 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=444&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:44:48 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"444", "commit"=>"Палиндромы с квадратами палиндромами"}
+  [1m[36mPalindrom Load (0.4ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 444], ["LIMIT", 1]]
+  ↳ app/controllers/palin_controller.rb:10
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 22ms (Views: 18.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=+%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+xml-render+" for 127.0.0.1 at 2019-01-08 18:44:50 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>" Получить xml-render "}
+  [1m[36mPalindrom Load (0.3ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:27
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 18:44:56 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-08 18:44:59 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/outputdb?utf8=%E2%9C%93&arr=hgfhg&commit=%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D1%8B+%D1%81+%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B0%D0%BC%D0%B8+%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8" for 127.0.0.1 at 2019-01-08 18:45:01 +0300
+Processing by PalinController#outputdb as HTML
+  Parameters: {"utf8"=>"✓", "arr"=>"hgfhg", "commit"=>"Палиндромы с квадратами палиндромами"}
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/palin/results?utf8=%E2%9C%93&commit=+%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C+xml-render+" for 127.0.0.1 at 2019-01-08 18:45:03 +0300
+Processing by PalinController#results as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>" Получить xml-render "}
+  [1m[36mPalindrom Load (0.4ms)[0m  [1m[34mSELECT "palindroms".* FROM "palindroms"[0m
+  ↳ app/controllers/palin_controller.rb:27
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms)
+
+

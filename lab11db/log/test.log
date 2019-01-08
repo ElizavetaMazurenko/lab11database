@@ -1,0 +1,526 @@
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "palindroms"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1325.6ms)[0m  [1m[35mCREATE TABLE "palindroms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "num" integer, "palind" text, "sq" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (24.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (24.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190108033149)[0m
+  [1m[35m (24.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-01-08 15:09:10.738473"], ["updated_at", "2019-01-08 15:09:10.738473"]]
+  [1m[35m (22.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "palindroms"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:09:10.822215', '2019-01-08 15:09:10.822215', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:09:10.822215', '2019-01-08 15:09:10.822215', 298486374)[0m
+  [1m[35m (27.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+PalindromTest: test_shoud_not_save_with_save_fields
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+PalindromTest: test_should_find_pal
+-----------------------------------
+  [1m[36mPalindrom Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."count" = ? LIMIT ?[0m  [["count", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PalindromTest: test_should_not_create_pal
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-01-08 15:09:10.881095"], ["updated_at", "2019-01-08 15:09:10.881095"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PalinControllerTest: test_should_get_outputdb
+---------------------------------------------
+Started GET "/palin/outputdb" for 127.0.0.1 at 2019-01-08 18:09:11 +0300
+Processing by PalinController#outputdb as HTML
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Create (0.9ms)[0m  [1m[32mINSERT INTO "palindroms" ("palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["palind", "[0]"], ["sq", "[0]"], ["created_at", "2019-01-08 15:09:11.115274"], ["updated_at", "2019-01-08 15:09:11.115274"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 308ms (Views: 296.2ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+PalinControllerTest: test_should_get_inputdb
+--------------------------------------------
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:09:11 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "palindroms"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:11:14.614189', '2019-01-08 15:11:14.614189', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:11:14.614189', '2019-01-08 15:11:14.614189', 298486374)[0m
+  [1m[35m (41.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+PalinControllerTest: test_should_get_inputdb
+--------------------------------------------
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:11:14 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 214ms (Views: 206.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PalinControllerTest: test_should_get_outputdb
+---------------------------------------------
+Started GET "/palin/outputdb" for 127.0.0.1 at 2019-01-08 18:11:14 +0300
+Processing by PalinController#outputdb as HTML
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["palind", "[0]"], ["sq", "[0]"], ["created_at", "2019-01-08 15:11:14.949296"], ["updated_at", "2019-01-08 15:11:14.949296"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 12ms (Views: 2.0ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PalindromTest: test_should_not_create_pal
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-01-08 15:11:14.956474"], ["updated_at", "2019-01-08 15:11:14.956474"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+PalindromTest: test_shoud_not_save_with_save_fields
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["num", 1], ["created_at", "2019-01-08 15:11:14.959116"], ["updated_at", "2019-01-08 15:11:14.959116"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+PalindromTest: test_should_find_pal
+-----------------------------------
+  [1m[36mPalindrom Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "palindroms"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:11:52.831381', '2019-01-08 15:11:52.831381', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:11:52.831381', '2019-01-08 15:11:52.831381', 298486374)[0m
+  [1m[35m (16.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+PalindromTest: test_shoud_not_save_with_save_fields
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Create (0.4ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["num", 1], ["created_at", "2019-01-08 15:11:52.864416"], ["updated_at", "2019-01-08 15:11:52.864416"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+PalindromTest: test_should_find_pal
+-----------------------------------
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PalindromTest: test_should_not_create_pal
+-----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Create (0.2ms)[0m  [1m[32mINSERT INTO "palindroms" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-01-08 15:11:52.870155"], ["updated_at", "2019-01-08 15:11:52.870155"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+PalinControllerTest: test_should_get_inputdb
+--------------------------------------------
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:11:52 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 219ms (Views: 210.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PalinControllerTest: test_should_get_outputdb
+---------------------------------------------
+Started GET "/palin/outputdb" for 127.0.0.1 at 2019-01-08 18:11:53 +0300
+Processing by PalinController#outputdb as HTML
+  [1m[36mPalindrom Load (0.2ms)[0m  [1m[34mSELECT  "palindroms".* FROM "palindroms" WHERE "palindroms"."num" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Create (0.2ms)[0m  [1m[32mINSERT INTO "palindroms" ("palind", "sq", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["palind", "[0]"], ["sq", "[0]"], ["created_at", "2019-01-08 15:11:53.175314"], ["updated_at", "2019-01-08 15:11:53.175314"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "palindroms"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:24:52.013891', '2019-01-08 15:24:52.013891', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:24:52.013891', '2019-01-08 15:24:52.013891', 298486374)[0m
+  [1m[35m (39.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+PalindromTest: test_shoud_not_save_with_save_fields
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["num", 1], ["created_at", "2019-01-08 15:24:52.065836"], ["updated_at", "2019-01-08 15:24:52.065836"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+PalindromTest: test_should_find_pal
+-----------------------------------
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PalindromTest: test_should_not_create_pal
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-01-08 15:24:52.071014"], ["updated_at", "2019-01-08 15:24:52.071014"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PalinControllerTest: test_should_get_outputdb
+---------------------------------------------
+Started GET "/palin/outputdb" for 127.0.0.1 at 2019-01-08 18:24:52 +0300
+Processing by PalinController#outputdb as HTML
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 210ms (Views: 202.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+PalinControllerTest: test_should_get_inputdb
+--------------------------------------------
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:24:52 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "palindroms"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:26:09.888472', '2019-01-08 15:26:09.888472', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:26:09.888472', '2019-01-08 15:26:09.888472', 298486374)[0m
+  [1m[35m (21.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+PalinControllerTest: test_should_get_inputdb
+--------------------------------------------
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:26:09 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 234ms (Views: 227.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PalinControllerTest: test_should_get_outputdb
+---------------------------------------------
+Started GET "/palin/outputdb" for 127.0.0.1 at 2019-01-08 18:26:10 +0300
+Processing by PalinController#outputdb as HTML
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+PalindromTest: test_should_find_pal
+-----------------------------------
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+PalindromTest: test_shoud_not_save_with_save_fields
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["num", 50], ["created_at", "2019-01-08 15:26:10.225523"], ["updated_at", "2019-01-08 15:26:10.225523"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "palindroms"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:38:05.942209', '2019-01-08 15:38:05.942209', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:38:05.942209', '2019-01-08 15:38:05.942209', 298486374)[0m
+  [1m[35m (46.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+PalinControllerTest: test_should_get_inputdb
+--------------------------------------------
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:38:06 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 226ms (Views: 218.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PalinControllerTest: test_should_get_outputdb
+---------------------------------------------
+Started GET "/palin/outputdb" for 127.0.0.1 at 2019-01-08 18:38:06 +0300
+Processing by PalinController#outputdb as HTML
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PalindromTest: test_should_not_create_pal
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+PalindromTest: test_should_find_pal
+-----------------------------------
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+PalindromTest: test_shoud_not_save_with_save_fields
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "palindroms"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:41:04.910101', '2019-01-08 15:41:04.910101', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:41:04.910101', '2019-01-08 15:41:04.910101', 298486374)[0m
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+PalinControllerTest: test_should_get_inputdb
+--------------------------------------------
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:41:04 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 236ms (Views: 228.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PalinControllerTest: test_should_get_outputdb
+---------------------------------------------
+Started GET "/palin/outputdb" for 127.0.0.1 at 2019-01-08 18:41:05 +0300
+Processing by PalinController#outputdb as HTML
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+PalindromTest: test_shoud_not_save_with_save_fields
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["num", 50], ["created_at", "2019-01-08 15:41:05.246830"], ["updated_at", "2019-01-08 15:41:05.246830"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+PalindromTest: test_should_find_pal
+-----------------------------------
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PalindromTest: test_should_not_create_pal
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "palindroms"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:41:25.148236', '2019-01-08 15:41:25.148236', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:41:25.148236', '2019-01-08 15:41:25.148236', 298486374)[0m
+  [1m[35m (36.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PalinControllerTest: test_should_get_outputdb
+---------------------------------------------
+Started GET "/palin/outputdb" for 127.0.0.1 at 2019-01-08 18:41:25 +0300
+Processing by PalinController#outputdb as HTML
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 133ms (Views: 125.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+PalinControllerTest: test_should_get_inputdb
+--------------------------------------------
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:41:25 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+PalindromTest: test_should_find_pal
+-----------------------------------
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+PalindromTest: test_shoud_not_save_with_save_fields
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["num", 50], ["created_at", "2019-01-08 15:41:25.427654"], ["updated_at", "2019-01-08 15:41:25.427654"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PalindromTest: test_should_not_create_pal
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "palindroms"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:41:38.367435', '2019-01-08 15:41:38.367435', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:41:38.367435', '2019-01-08 15:41:38.367435', 298486374)[0m
+  [1m[35m (35.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+PalindromTest: test_shoud_not_save_with_save_fields
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 50], ["LIMIT", 1]]
+  [1m[36mPalindrom Create (0.3ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["num", 50], ["created_at", "2019-01-08 15:41:38.415230"], ["updated_at", "2019-01-08 15:41:38.415230"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+PalindromTest: test_should_find_pal
+-----------------------------------
+  [1m[36mPalindrom Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+PalinControllerTest: test_should_get_inputdb
+--------------------------------------------
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:41:38 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 204ms (Views: 197.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PalinControllerTest: test_should_get_outputdb
+---------------------------------------------
+Started GET "/palin/outputdb" for 127.0.0.1 at 2019-01-08 18:41:38 +0300
+Processing by PalinController#outputdb as HTML
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "palindroms"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:41:55.090458', '2019-01-08 15:41:55.090458', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "palindroms" ("num", "palind", "sq", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2019-01-08 15:41:55.090458', '2019-01-08 15:41:55.090458', 298486374)[0m
+  [1m[35m (1006.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+PalindromTest: test_should_find_pal
+-----------------------------------
+  [1m[36mPalindrom Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PalindromTest: test_should_not_create_pal
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+PalindromTest: test_shoud_not_save_with_save_fields
+---------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPalindrom Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "palindroms" WHERE "palindroms"."num" = ? LIMIT ?[0m  [["num", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+PalinControllerTest: test_should_get_inputdb
+--------------------------------------------
+Started GET "/palin/inputdb" for 127.0.0.1 at 2019-01-08 18:41:56 +0300
+Processing by PalinController#inputdb as HTML
+  Rendering palin/inputdb.html.erb within layouts/application
+  Rendered palin/inputdb.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 230ms (Views: 222.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PalinControllerTest: test_should_get_outputdb
+---------------------------------------------
+Started GET "/palin/outputdb" for 127.0.0.1 at 2019-01-08 18:41:56 +0300
+Processing by PalinController#outputdb as HTML
+  Rendering palin/outputdb.html.erb within layouts/application
+  Rendered palin/outputdb.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
